@@ -3,16 +3,14 @@ import os
 import pandas as pd
 
 '''CREATING THE LOCATION DIR'''
-locations_dir = '../data/locations' 
-os.makedirs(locations_dir, exist_ok=True)
-ws.download_locations(locations_dir)
 
-locations_dir = '../data/locations' 
+locations_dir = 'data/locations' 
 f = os.listdir(locations_dir)[-1]
 fp = os.path.join(locations_dir, f)
 
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
 locs = pd.read_csv(fp)
+locs_df = pd.DataFrame(locs)
 us_filter = locs_df['Country Code'] == 'US'
 usa_locs = locs_df[us_filter]
 
