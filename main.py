@@ -11,6 +11,8 @@ fp = os.path.join(locations_dir, f)
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
 locs = pd.read_csv(fp)
 locs_df = pd.DataFrame(locs)
+print (locs_df.head())
+print (locs_df.columns)
 us_filter = locs_df['Country Code'] == 'US'
 usa_locs = locs_df[us_filter]
 
