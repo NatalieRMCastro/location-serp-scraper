@@ -1,6 +1,10 @@
 import WebSearcher as ws
 import os
 import pandas as pd
+import selenium
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium import webdriver
 
 ''' GITHUB AND SELENIUM CONFLICT FIXING '''
 ## fix source: https://github.com/SeleniumHQ/selenium/issues/14609
@@ -8,12 +12,14 @@ import pandas as pd
 #options.add_argument("--no-sandbox")
 #driver = webdriver.Chrome(options=options)
 
+
 s_config = {
   "browser": "chrome",
   "headless":True,
   "options":{ "arguments":["--no-sandbox"]},
-  "version_main":133,
+  "version_main":114,
   "use_subprocess":False,
+  "driver_executable_path": "driver/chromedriver"
   }
 ''' READING IN CANONICAL LOCATIONS '''
 
