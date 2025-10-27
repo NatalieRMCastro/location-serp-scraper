@@ -46,10 +46,9 @@ def main(query,canonical_name=False):
   ## Parsing The Results
   print ("... searched...")
   print (f"PRINTING SEARCH_ENGINE OBJ:\n\tRESPONSE_OUTPUT: {search_engine.response_output}")
+  print (f"\n\nSERP DUMP:\n\t{search_engine.serp}")
     
   print ("... preparing to parse search results!...")
-  if "CAPTCHA" in search_engine or "unusual traffic" in search_engine:
-    return {"error": "CAPTCHA detected"}
   search_engine.parse_results()
   search_engine.save_serp(append_to='results-data/serp_tester.json')
   search_engine.save_results(append_to = 'results-data/serp_result_tester.json')
