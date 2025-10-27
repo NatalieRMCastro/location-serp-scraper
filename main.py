@@ -19,11 +19,7 @@ usa_locs = locs_df[us_filter]
 ### DEFINING WEB SEARCHER FUNCTION
 def main(query,canonical_name=False):
   query = 'what to do after high school'
-  if canonical_name!= False:
-    pass
-
-  else:
-    canonical_name == False:
+  if canonical_name == False:
     search_engine = ws.SearchEngine()
     search_engine.search(query)
     search_engine.parse_results()
