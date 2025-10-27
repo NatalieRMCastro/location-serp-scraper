@@ -2,9 +2,7 @@ import WebSearcher as ws
 import os
 import pandas as pd
 import selenium
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
+
 
 ''' GITHUB AND SELENIUM CONFLICT FIXING '''
 ## fix source: https://github.com/SeleniumHQ/selenium/issues/14609
