@@ -17,8 +17,10 @@ s_config = {
   "options":{ "arguments":["--no-sandbox"]},
   "version_main":140,
   "use_subprocess":False,
-  "driver_executable_path": "driver/chromedriver"
   }
+
+#   "driver_executable_path": "driver/chromedriver" (removed from config, maybe don't need it)
+
 ''' READING IN CANONICAL LOCATIONS '''
 
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
