@@ -9,7 +9,7 @@ f = os.listdir(locations_dir)[-1]
 fp = os.path.join(locations_dir, f)
 
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
-locs = pd.read_csv(fp)
+locs = pd.read_csv('data/locations/geotargets-2025-07-15.csv')
 locs_df = pd.DataFrame(locs)
 print (locs_df.head())
 print (locs_df.columns)
