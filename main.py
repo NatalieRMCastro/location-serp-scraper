@@ -11,7 +11,10 @@ import pandas as pd
 s_config = {
   "browser": "chrome",
   "headless":True,
-  "options":{ "arguments":["--no-sandbox"]}
+  "options":{ "arguments":["--no-sandbox"]},
+  "version_main":133,
+  "use_subprocess":False,
+  "driver_executable_path":str = ""
   }
 ''' READING IN CANONICAL LOCATIONS '''
 
