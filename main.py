@@ -37,7 +37,7 @@ def main(query,canonical_name=False):
     print ("🖥️🐛 ready to search on google...")
     search_engine.search(query)
     print ("... searched...")
-    print (f"PRINTING SEARCH_ENGINE OBJ:\n {search_engine}\n")
+    print (f"PRINTING SEARCH_ENGINE OBJ:\n\tRESPONSE_OUTPUT: {search_engine.response_output}\n\tSERP OUTPUT: {search_engine.serp_output}")
     
     print ("... preparing to parse search results!...")
     search_engine.parse_results()
