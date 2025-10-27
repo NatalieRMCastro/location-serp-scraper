@@ -2,17 +2,12 @@ import WebSearcher as ws
 import os
 import pandas as pd
 
-'''CREATING THE LOCATION DIR'''
-
-locations_dir = 'data/locations' 
-f = os.listdir(locations_dir)[-1]
-fp = os.path.join(locations_dir, f)
+''' READING IN CANONICAL LOCATIONS '''
 
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
 locs = pd.read_csv('data/locations/geotargets-2025-07-15.csv')
 locs_df = pd.DataFrame(locs)
-print (locs_df.head())
-print (locs_df.columns)
+
 us_filter = locs_df['Country Code'] == 'US'
 usa_locs = locs_df[us_filter]
 
@@ -29,4 +24,4 @@ def main(query,canonical_name=False):
 
 ''' RUNNING THE FUNCTION '''
 if __name__=="__main__":
-    main()
+    main("what to do after high school")
