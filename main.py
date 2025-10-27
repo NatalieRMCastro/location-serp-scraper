@@ -14,7 +14,6 @@ s_config = {
   "options":{ "arguments":["--no-sandbox"]},
   "version_main":133,
   "use_subprocess":False,
-  "driver_executable_path":str = ""
   }
 ''' READING IN CANONICAL LOCATIONS '''
 
