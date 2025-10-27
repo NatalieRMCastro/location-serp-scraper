@@ -17,7 +17,7 @@ s_config = {
   "browser": "chrome",
   "headless":True,
   "options":{ "arguments":["--no-sandbox"]},
-  "version_main":114,
+  "version_main":140,
   "use_subprocess":False,
   "driver_executable_path": "driver/chromedriver"
   }
