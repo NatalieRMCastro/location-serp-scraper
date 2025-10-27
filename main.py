@@ -40,14 +40,11 @@ def main(query,canonical_name=False):
     search_engine.search(query)
     print ("... searched...")
     
-    ## Trying to screenshot if it is giving captcha - it did earlier
-    driver.save_screenshot("page.png")
-    with open("page.html", "w", encoding="utf-8") as f:
-        f.write(driver.page_source)
     print ("... preparing to parse search results!...")
     search_engine.parse_results()
     search_engine.save_serp(append_to='results-data/serp_tester.json')
     search_engine.save_results(append_to = 'results-data/serp_result_tester.json')
+    print ("... saved and cleaning up 🧹🐛")
 
 
 ''' RUNNING THE FUNCTION '''
