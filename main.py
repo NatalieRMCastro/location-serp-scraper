@@ -10,7 +10,6 @@ import selenium
 #options.add_argument("--no-sandbox")
 #driver = webdriver.Chrome(options=options)
 
-
 s_config = {
   "browser": "chrome",
   "headless":True,
@@ -19,7 +18,6 @@ s_config = {
   "use_subprocess":False,
   }
 
-#   "driver_executable_path": "driver/chromedriver" (removed from config, maybe don't need it)
 
 ''' READING IN CANONICAL LOCATIONS '''
 
@@ -39,6 +37,7 @@ def main(query,canonical_name=False):
     print ("🖥️🐛 ready to search on google...")
     search_engine.search(query)
     print ("... searched...")
+    print (f"PRINTING SEARCH_ENGINE OBJ:\n {search_engine}\n")
     
     print ("... preparing to parse search results!...")
     search_engine.parse_results()
