@@ -2,6 +2,17 @@ import WebSearcher as ws
 import os
 import pandas as pd
 
+''' GITHUB AND SELENIUM CONFLICT FIXING '''
+## fix source: https://github.com/SeleniumHQ/selenium/issues/14609
+#options = webdriver.ChromeOptions()
+#options.add_argument("--no-sandbox")
+#driver = webdriver.Chrome(options=options)
+
+s_config = {
+  "browser": "chrome",
+  "headless":True,
+  "options:{ "arguments":["--no-sandbox"]}
+  }
 ''' READING IN CANONICAL LOCATIONS '''
 
 ## Loading the data and displaying the results and filtering for United States Canonical Locations
@@ -15,7 +26,7 @@ usa_locs = locs_df[us_filter]
 def main(query,canonical_name=False):
   query = 'what to do after high school'
   if canonical_name == False:
-    search_engine = ws.SearchEngine()
+    search_engine = ws.SearchEngine(selenium_config = s_config)
     search_engine.search(query)
     search_engine.parse_results()
     search_engine.save_serp(append_to='results-data/serp_tester.json')
