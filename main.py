@@ -30,22 +30,31 @@ usa_locs = locs_df[us_filter]
 
 ### DEFINING WEB SEARCHER FUNCTION
 def main(query,canonical_name=False):
-  query = 'what to do after high school'
+  ## Conditional Statement Dependent on Location Based Search
   if canonical_name == False:
     search_engine = ws.SearchEngine(selenium_config = s_config)
 
     print ("🖥️🐛 ready to search on google...")
     search_engine.search(query)
-    print ("... searched...")
-    print (f"PRINTING SEARCH_ENGINE OBJ:\n\tRESPONSE_OUTPUT: {search_engine.response_output}\n\tSERP OUTPUT: {search_engine.serp_output}")
+
+  else:
+    search_engine = ws.SearchEngine(selenium_config = s_config)
+    print (f"🖥️🐛 ready to search on google with canonical location {canonical_name}...")
+    search_engine.search(query, canonical_name)
+
+
+  ## Parsing The Results
+  print ("... searched...")
+  print (f"PRINTING SEARCH_ENGINE OBJ:\n\tRESPONSE_OUTPUT: {search_engine.response_output}")
     
-    print ("... preparing to parse search results!...")
-    search_engine.parse_results()
-    search_engine.save_serp(append_to='results-data/serp_tester.json')
-    search_engine.save_results(append_to = 'results-data/serp_result_tester.json')
-    print ("... saved and cleaning up 🧹🐛")
+  print ("... preparing to parse search results!...")
+  search_engine.parse_results()
+  search_engine.save_serp(append_to='results-data/serp_tester.json')
+  search_engine.save_results(append_to = 'results-data/serp_result_tester.json')
+  print ("... saved and cleaning up 🧹🐛")
+    
 
 
 ''' RUNNING THE FUNCTION '''
 if __name__=="__main__":
-    main("what to do after high school")
+    main("what to do after high school", "Hinckley,Minnesota,United States")
