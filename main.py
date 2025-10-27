@@ -11,7 +11,7 @@ import pandas as pd
 s_config = {
   "browser": "chrome",
   "headless":True,
-  "options:{ "arguments":["--no-sandbox"]}
+  "options":{ "arguments":["--no-sandbox"]}
   }
 ''' READING IN CANONICAL LOCATIONS '''
 
