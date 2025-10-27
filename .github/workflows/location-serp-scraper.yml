@@ -1,4 +1,4 @@
-name: google-autocomplete-pull
+name: location-serp-scraper
 on:
   workflow_dispatch:
   schedule: 
